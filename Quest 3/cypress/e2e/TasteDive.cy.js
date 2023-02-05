@@ -1,7 +1,15 @@
 describe('TasteDive', () => {
   it('Get API', () => {
-    cy.request('https://tastedive.com/api/similar?q=movie:godzilla')
-      .then(response =>{
-        alert(JSON.stringify(response.body))})
-  })
-})
+    cy.fixture('filmNames').as('filmNames');
+    cy.request({
+      method : 'Get',
+      url: 'https://tastedive.com/api/similar',
+      body: {
+        '@filmNames'
+      }
+
+                })
+                      })
+                            })
+
+                              
