@@ -7,7 +7,13 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
+//Cypress.Commands.add('coronaSearchByDate', (date) => {
+Cypress.Commands.add('apiSearch', (date) => {
+    let fixture = require('../fixtures/filmNames')
+cy.request({
+        url: `https://tastedive.com/api/similar?q=${fixture.name}`
+    }) })
+
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
